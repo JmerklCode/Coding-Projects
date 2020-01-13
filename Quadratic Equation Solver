@@ -1,0 +1,47 @@
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+	double coefa;
+	double coefb;
+	double coefc;
+	cout << "Enter the value of the coefficient of the second order (x squared) term:" << endl;
+	cin >> coefa;
+	cout << "Enter the value of the coefficient of the first order term:" << endl;
+	cin >> coefb;
+	cout << "Enter the value of the constant term:" << endl;
+	cin >> coefc;
+	cout << endl << endl << endl << "The coefficients of the quadratic equation are:";
+	cout << endl << "    Coefficient of the second order term is ";
+	printf("%.2f", coefa);
+	cout << ",";
+	cout << endl << "    Coefficient of the first order term is ";
+	printf("%.2f", coefb);
+	cout << ",";
+	cout << endl << "    Coefficient of the constant term is ";
+	printf("%.2f", coefc);
+	cout << ",";
+	cout << endl << endl << endl << endl << endl;
+	
+	if (coefa >= 0 && coefb >= 0 && coefc >= 0)
+	{
+
+		cout << "There are two real roots, root1 = " << (-coefb + sqrt(coefb * coefb - 4 * coefa * coefc)) / (2 * coefa);
+		cout << " and root2 = " << (-coefb - sqrt(coefb * coefb - 4 * coefa * coefc)) / (2 * coefa);
+
+	}
+	else if (sqrt(coefb*coefb - 4 * coefa * coefc >= 0)) 
+	{
+
+	}
+	else {
+		cout << "There are no real roots.";
+	}
+
+
+	
+	return 0;
+}
