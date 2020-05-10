@@ -5,15 +5,20 @@ using namespace std;
 
 int main()
 {
+	//Variable declaration (doubles to be safe)
 	double coefa;
 	double coefb;
 	double coefc;
+
+	//Output statements and input from user
 	cout << "Enter the value of the coefficient of the second order (x squared) term:" << endl;
 	cin >> coefa;
 	cout << "Enter the value of the coefficient of the first order term:" << endl;
 	cin >> coefb;
 	cout << "Enter the value of the constant term:" << endl;
 	cin >> coefc;
+
+	//reitterate coefficients of quadratic
 	cout << endl << endl << endl << "The coefficients of the quadratic equation are:";
 	cout << endl << "    Coefficient of the second order term is ";
 	printf("%.2f", coefa);
@@ -25,23 +30,26 @@ int main()
 	printf("%.2f", coefc);
 	cout << ",";
 	cout << endl << endl << endl << endl << endl;
-	
-	if (coefa >= 0 && coefb >= 0 && coefc >= 0)
+
+	//Solving quadratic
+	if ((sqrt(coefb * coefb - 4 * coefa * coefc)>0))
 	{
 
 		cout << "There are two real roots, root1 = " << (-coefb + sqrt(coefb * coefb - 4 * coefa * coefc)) / (2 * coefa);
 		cout << " and root2 = " << (-coefb - sqrt(coefb * coefb - 4 * coefa * coefc)) / (2 * coefa);
 
 	}
-	else if (sqrt(coefb*coefb - 4 * coefa * coefc >= 0)) 
+	else if (sqrt(coefb * coefb - 4 * coefa * coefc) == 0)
 	{
-
+		cout << "There is only one root = " << (-coefb + sqrt(coefb * coefb - 4 * coefa * coefc)) / (2 * coefa) << endl;
 	}
+
+	//If all else fails, output
 	else {
 		cout << "There are no real roots.";
 	}
 
 
-	
+
 	return 0;
 }
